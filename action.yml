@@ -1,6 +1,9 @@
 # action.yml
 name: "huacnlee.autocorrect"
 description: "Use autocorrect to check."
+branding:
+  icon: "check"
+  color: "gray-dark"
 inputs:
   args: # id of input
     description: "args for autocorrect"
