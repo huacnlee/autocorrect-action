@@ -1,5 +1,5 @@
 # action.yml
-name: "AutoCorrect"
+name: "huacnlee.autocorrect"
 description: "Use autocorrect to check."
 inputs:
   args: # id of input
