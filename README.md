@@ -9,6 +9,6 @@ steps:
   - name: Check source code
     uses: actions/checkout@master
 
-  - name: Install Rust
+  - name: AutoCorrect
     uses: huacnlee/autocorrect-action@master
 ```
