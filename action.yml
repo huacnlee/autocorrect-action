@@ -1,0 +1,13 @@
+# action.yml
+name: "AutoCorrect"
+description: "Use autocorrect to check."
+inputs:
+  options: # id of input
+    description: "options"
+    required: true
+    default: "./ --lint"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.options }}
