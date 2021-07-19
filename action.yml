@@ -2,12 +2,12 @@
 name: "AutoCorrect"
 description: "Use autocorrect to check."
 inputs:
-  options: # id of input
-    description: "options"
-    required: true
+  args: # id of input
+    description: "args for autocorrect"
+    required: false
     default: "./ --lint"
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.options }}
+    - ${{ inputs.args }}
