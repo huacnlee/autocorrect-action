@@ -7,8 +7,8 @@ https://github.com/huacnlee/autocorrect
 ```yml
 steps:
   - name: Check source code
-    uses: actions/checkout@master
+    uses: actions/checkout@main
 
   - name: AutoCorrect
-    uses: huacnlee/autocorrect-action@master
+    uses: huacnlee/autocorrect-action@main
 ```
