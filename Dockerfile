@@ -1,4 +1,4 @@
-FROM huacnlee/autocorrect:v1.8.1
+FROM huacnlee/autocorrect:v1.9.1
 
 ADD entrypoint.sh /entrypoint.sh
 
