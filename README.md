@@ -19,7 +19,7 @@ steps:
 
 ### Only check changed file by PR
 
-```
+```yml
 steps:
   - name: Check source code
     uses: actions/checkout@main
