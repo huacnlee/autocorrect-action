@@ -1,5 +1,5 @@
 # action.yml
-name: "huacnlee.autocorrect"
+name: "AutoCorrect"
 description: "Use autocorrect to check."
 branding:
   icon: "check"
