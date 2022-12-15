@@ -1,6 +1,6 @@
 # action.yml
 name: "AutoCorrect"
-description: "Use autocorrect to check."
+description: "Run AutoCorrect lint to checking copywriting."
 branding:
   icon: "check"
   color: "gray-dark"
