@@ -27,6 +27,5 @@ steps:
   - name: AutoCorrect
     uses: huacnlee/autocorrect-action@main
     with:
-      args:
-        - --lint $(git diff --diff-filter=AM --name-only ${{ github.event.pull_request.base.sha }}}
+      args: --lint $(git diff --diff-filter=AM --name-only ${{ github.event.pull_request.base.sha }}}
 ```
