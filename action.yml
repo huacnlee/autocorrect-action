@@ -1,14 +1,14 @@
 # action.yml
 name: "AutoCorrect"
-description: "Run AutoCorrect lint to checking copywriting."
+description: "Run AutoCorrect Lint to checking copywriting."
 branding:
   icon: "check"
   color: "gray-dark"
 inputs:
   args: # id of input
-    description: "args for autocorrect"
+    description: "args for AutoCorrect"
     required: false
-    default: "./ --lint"
+    default: "./ --lint --no-diff-bg-color"
 runs:
   using: "docker"
   image: "Dockerfile"
