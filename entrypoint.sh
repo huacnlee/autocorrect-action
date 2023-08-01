@@ -1,3 +1,10 @@
 #!/bin/sh
 set -e
-/usr/local/bin/autocorrect $*
+
+# If USE_NPM=true, use npm version of autocorrect
+if [ "$USE_NPM" = "true" ]; then
+    yarn autocorrect $*
+else
+    /usr/local/bin/autocorrect $*
+fi
+
