@@ -13,6 +13,10 @@ inputs:
     description: "Use NPM version of AutoCorrect"
     required: false
     default: "false"
+  reviewdog:
+    description: "Enable ReviewDog for report results to Pull Request"
+    required: false
+    default: "false"
 runs:
   using: "docker"
   image: "Dockerfile"

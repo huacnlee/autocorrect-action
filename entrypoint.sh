@@ -1,11 +1,18 @@
 #!/bin/sh
 set -e
 
+bin=/usr/local/bin/autocorrect
+
+
+
 # If USE_NPM=true, use npm version of autocorrect
 if [ "$USE_NPM" = "true" ]; then
-    echo "Execute autocorrect-node ..."
-    /root/.yarn/bin/autocorrect $*
-else
-    /usr/local/bin/autocorrect $*
+    echo "Use autocorrect-node"
+    bin=/root/.yarn/bin/autocorrect
 fi
 
+if [ "$REVIEWDOG" = "true" ]; then
+    $bin $* | reviewdog -f=rdjson -reporter=github-pr-review
+else
+    $bin $*
+fi
