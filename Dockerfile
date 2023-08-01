@@ -1,8 +1,8 @@
 FROM huacnlee/autocorrect:v2.8.0
 
-RUN apk add --update nodejs yarn && \
-  yarn add autocorrect-node@v2.8.0
+RUN apk add --update nodejs yarn
 
-ADD entrypoint.sh /entrypoint.sh
+ADD . /
+RUN yarn
 
 ENTRYPOINT ["/entrypoint.sh"]
