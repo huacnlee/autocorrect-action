@@ -8,7 +8,7 @@ inputs:
   args: # id of input
     description: "args for AutoCorrect"
     required: false
-    default: "./ --lint --no-diff-bg-color"
+    default: ". --lint --no-diff-bg-color"
   use_npm: # id of input
     description: "Use NPM version of AutoCorrect"
     required: false
