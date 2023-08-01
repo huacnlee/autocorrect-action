@@ -22,5 +22,6 @@ runs:
   image: "Dockerfile"
   env:
     USE_NPM: ${{ inputs.use_npm }}
+    REVIEWDOG: ${{ inputs.reviewdog }}
   args:
     - ${{ inputs.args }}
