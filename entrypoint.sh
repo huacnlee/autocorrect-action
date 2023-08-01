@@ -12,7 +12,8 @@ if [ "$USE_NPM" = "true" ]; then
 fi
 
 if [ "$REVIEWDOG" = "true" ]; then
-    $bin --lint . --format rdjson | reviewdog -f=rdjson -reporter=github-pr-review
+    echo "Use reviewdog"
+    $bin --lint . --format rdjson | reviewdog -f=rdjson -reporter=github-pr-check
 else
     $bin $*
 fi
