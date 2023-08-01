@@ -17,6 +17,19 @@ steps:
     uses: huacnlee/autocorrect-action@main
 ```
 
+## Use NPM version AutoCorrect
+
+```yml
+steps:
+  - name: Check source code
+    uses: actions/checkout@main
+
+  - name: AutoCorrect
+    uses: huacnlee/autocorrect-action@main
+    with:
+      use_npm: true
+```
+
 ### Only check changed file by PR
 
 ```yml
