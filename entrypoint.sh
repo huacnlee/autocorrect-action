@@ -13,7 +13,7 @@ fi
 
 if [ "$REVIEWDOG" = "true" ]; then
     echo "Use reviewdog"
-    $bin --lint . --format rdjson | reviewdog -f=rdjson -reporter=github-pr-review -filter-mode=nofilter -level=warning -tee
+    $bin --lint . --format rdjson | reviewdog -f=rdjson -reporter=github-pr-review -level=warning
 else
     $bin $*
 fi
