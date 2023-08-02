@@ -8,9 +8,20 @@ inputs:
   args: # id of input
     description: "args for AutoCorrect"
     required: false
-    default: "./ --lint --no-diff-bg-color"
+    default: ". --lint --no-diff-bg-color"
+  use_npm: # id of input
+    description: "Use NPM version of AutoCorrect"
+    required: false
+    default: "false"
+  reviewdog:
+    description: "Enable ReviewDog for report results to Pull Request"
+    required: false
+    default: "false"
 runs:
   using: "docker"
   image: "Dockerfile"
+  env:
+    USE_NPM: ${{ inputs.use_npm }}
+    REVIEWDOG: ${{ inputs.reviewdog }}
   args:
     - ${{ inputs.args }}

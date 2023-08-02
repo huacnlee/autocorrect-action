@@ -17,6 +17,34 @@ steps:
     uses: huacnlee/autocorrect-action@main
 ```
 
+## Use NPM version AutoCorrect
+
+```yml
+steps:
+  - name: Check source code
+    uses: actions/checkout@main
+
+  - name: AutoCorrect
+    uses: huacnlee/autocorrect-action@main
+    with:
+      use_npm: true
+```
+
+## Enable ReviewDog for Report
+
+````yml
+steps:
+  - name: AutoCorrect
+    uses: huacnlee/autocorrect-action@main
+  - name: Report ReviewDog
+    if: failure()
+    uses: huacnlee/autocorrect-action@main
+    env:
+      REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      reviewdog: true
+```
+
 ### Only check changed file by PR
 
 ```yml
@@ -28,4 +56,4 @@ steps:
     uses: huacnlee/autocorrect-action@main
     with:
       args: --lint --no-diff-bg-color $(git diff --diff-filter=AM --name-only ${{ github.event.pull_request.base.sha }}}
-```
+````
