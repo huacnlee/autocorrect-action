@@ -1,4 +1,4 @@
-FROM huacnlee/autocorrect:v2.8.4
+FROM huacnlee/autocorrect:v2.10.0
 
 RUN apk add --update nodejs yarn && \
   curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin
