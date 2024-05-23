@@ -32,7 +32,7 @@ steps:
 
 ## Enable ReviewDog for Report
 
-````yml
+```yml
 steps:
   - name: AutoCorrect
     uses: huacnlee/autocorrect-action@main
@@ -44,6 +44,9 @@ steps:
     with:
       reviewdog: true
 ```
+
+<img width="819" alt="image" src="https://github.com/huacnlee/autocorrect-action/assets/5518/050d6f62-d461-44fc-a22f-2fb581ba0912">
+
 
 ### Only check changed file by PR
 
