@@ -10,22 +10,18 @@ https://github.com/huacnlee/autocorrect
 
 ```yml
 steps:
-  - name: Check source code
-    uses: actions/checkout@main
-
+  - uses: actions/checkout@v4
   - name: AutoCorrect
-    uses: huacnlee/autocorrect-action@main
+    uses: huacnlee/autocorrect-action@v2
 ```
 
 ## Use NPM version AutoCorrect
 
 ```yml
 steps:
-  - name: Check source code
-    uses: actions/checkout@main
-
+  - uses: actions/checkout@v4
   - name: AutoCorrect
-    uses: huacnlee/autocorrect-action@main
+    uses: huacnlee/autocorrect-action@v2
     with:
       use_npm: true
 ```
@@ -34,11 +30,12 @@ steps:
 
 ```yml
 steps:
+  - uses: actions/checkout@v4
   - name: AutoCorrect
-    uses: huacnlee/autocorrect-action@main
+    uses: huacnlee/autocorrect-action@v2
   - name: Report ReviewDog
     if: failure()
-    uses: huacnlee/autocorrect-action@main
+    uses: huacnlee/autocorrect-action@v2
     env:
       REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
@@ -52,11 +49,9 @@ steps:
 
 ```yml
 steps:
-  - name: Check source code
-    uses: actions/checkout@main
-
+  - uses: actions/checkout@v4
   - name: AutoCorrect
-    uses: huacnlee/autocorrect-action@main
+    uses: huacnlee/autocorrect-action@v2
     with:
       args: --lint --no-diff-bg-color $(git diff --diff-filter=AM --name-only ${{ github.event.pull_request.base.sha }}}
 ````
