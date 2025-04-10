@@ -1,5 +1,7 @@
 FROM huacnlee/autocorrect:v2.13.3
 
+WORKDIR ${GITHUB_WORKSPACE}
+
 RUN apk add --update nodejs yarn && \
   curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin
 

@@ -1,6 +1,5 @@
-# action.yml
 name: "AutoCorrect"
-description: "Run AutoCorrect Lint to checking copywriting."
+description: "Run AutoCorrect Lint to check copywriting."
 branding:
   icon: "check"
   color: "gray-dark"
@@ -14,9 +13,10 @@ inputs:
     required: false
     default: "false"
   reviewdog:
-    description: "Enable ReviewDog for report results to Pull Request"
+    description: "Enable ReviewDog to report results to Pull Request"
     required: false
     default: "false"
+
 runs:
   using: "docker"
   image: "Dockerfile"
