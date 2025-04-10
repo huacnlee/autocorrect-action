@@ -17,11 +17,18 @@ inputs:
     description: "Enable ReviewDog for report results to Pull Request"
     required: false
     default: "false"
+  target:
+    description: "Target directory to check"
+    required: false
+    default: "."
+
 runs:
   using: "docker"
   image: "Dockerfile"
   env:
     USE_NPM: ${{ inputs.use_npm }}
     REVIEWDOG: ${{ inputs.reviewdog }}
+    TARGET: ${{ inputs.target }}
+    ARGS: ${{ inputs.args }}
   args:
-    - ${{ inputs.args }}
+    - ${{ env.ARGS }}
