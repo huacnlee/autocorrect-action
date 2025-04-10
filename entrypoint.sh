@@ -12,8 +12,7 @@ fi
 if [ "$REVIEWDOG" = "true" ]; then
     echo "Use reviewdog"
     args=${ARGS:-"--lint "}
-    # cmd="$bin $args --format rdjson $@ | reviewdog -f=rdjson -reporter=github-pr-review -level=warning"
-    cmd="$bin $args --format rdjson $@ "
+    cmd="$bin $args --format rdjson $@ | reviewdog -f=rdjson -reporter=github-pr-review -level=warning"
     echo "Running command: $cmd"
     # shellcheck disable=SC2086
     eval "$cmd"
