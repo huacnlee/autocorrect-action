@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+echo "Workspace path: ${GITHUB_WORKSPACE}"
+
 bin=/usr/local/bin/autocorrect
 
 # If USE_NPM=true, use npm version of autocorrect
