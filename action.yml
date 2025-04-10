@@ -1,6 +1,5 @@
-# action.yml
 name: "AutoCorrect"
-description: "Run AutoCorrect Lint to checking copywriting."
+description: "Run AutoCorrect Lint to check copywriting."
 branding:
   icon: "check"
   color: "gray-dark"
@@ -14,7 +13,7 @@ inputs:
     required: false
     default: "false"
   reviewdog:
-    description: "Enable ReviewDog for report results to Pull Request"
+    description: "Enable ReviewDog to report results to Pull Request"
     required: false
     default: "false"
   target:
@@ -29,6 +28,5 @@ runs:
     USE_NPM: ${{ inputs.use_npm }}
     REVIEWDOG: ${{ inputs.reviewdog }}
     TARGET: ${{ inputs.target }}
-    ARGS: ${{ inputs.args }}
   args:
-    - ${{ env.ARGS }}
+    - ${{ inputs.args }}
