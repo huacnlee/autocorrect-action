@@ -11,7 +11,7 @@ fi
 
 if [ "$REVIEWDOG" = "true" ]; then
     echo "Use reviewdog"
-    args=${ARGS:-". --lint --no-diff-bg-color"}
+    args=${ARGS:-"--lint "}
     echo "$bin $args --format rdjson $@ | reviewdog -f=rdjson -reporter=github-pr-review -level=warning"
     $bin $args --format rdjson "$@" | reviewdog -f=rdjson -reporter=github-pr-review -level=warning
 else
