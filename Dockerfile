@@ -2,10 +2,6 @@ FROM huacnlee/autocorrect:v2.13.3
 
 WORKDIR ${GITHUB_WORKSPACE}
 
-RUN apk add --no-cache git
-
-RUN git config --global --add safe.directory /github/workspace
-
 RUN apk add --update nodejs yarn && \
   curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin
 
