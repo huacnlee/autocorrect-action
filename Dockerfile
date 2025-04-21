@@ -2,9 +2,7 @@ FROM huacnlee/autocorrect:v2.13.3
 
 WORKDIR ${GITHUB_WORKSPACE}
 
-RUN apt-get update && apt-get install -y \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache git
 
 RUN apk add --update nodejs yarn && \
   curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin
