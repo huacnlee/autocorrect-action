@@ -1,5 +1,7 @@
 FROM huacnlee/autocorrect:v2.13.3
 
+git config --global --add safe.directory ${GITHUB_WORKSPACE}
+
 WORKDIR ${GITHUB_WORKSPACE}
 
 RUN apk add --update nodejs yarn && \
