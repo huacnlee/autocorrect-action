@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
+echo "Workspace path: ${GITHUB_WORKSPACE}"
+
 bin=/usr/local/bin/autocorrect
-
-
 
 # If USE_NPM=true, use npm version of autocorrect
 if [ "$USE_NPM" = "true" ]; then
@@ -13,7 +13,11 @@ fi
 
 if [ "$REVIEWDOG" = "true" ]; then
     echo "Use reviewdog"
-    $bin --lint . --format rdjson | reviewdog -f=rdjson -reporter=github-pr-review -level=warning
+    args=${ARGS:-"--lint "}
+    cmd="$bin $args --format rdjson $@ | reviewdog -f=rdjson -reporter=github-pr-review -level=warning"
+    echo "Running command: $cmd"
+    # shellcheck disable=SC2086
+    eval "$cmd"
 else
-    $bin $*
+    $bin "$@"
 fi

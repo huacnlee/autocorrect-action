@@ -29,17 +29,22 @@ steps:
 ## Enable ReviewDog for Report
 
 ```yml
-steps:
-  - uses: actions/checkout@v4
-  - name: AutoCorrect
-    uses: huacnlee/autocorrect-action@v2
-  - name: Report ReviewDog
-    if: failure()
-    uses: huacnlee/autocorrect-action@v2
-    env:
-      REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      reviewdog: true
+runs-on: ubuntu-latest
+  permissions:
+    pull-requests: write
+  steps:
+    - name: Check repo
+      uses: actions/checkout@v4
+    - name: AutoCorrect
+      uses: huacnlee/autocorrect-action@v2
+    - name: Report ReviewDog
+      if: failure()
+      uses: huacnlee/autocorrect-action@v2
+      env:
+        REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        reviewdog: true
+        args: ./docs/zh/*  ./docs/en/*  # Set the path to your repository files
 ```
 
 <img width="819" alt="image" src="https://github.com/huacnlee/autocorrect-action/assets/5518/050d6f62-d461-44fc-a22f-2fb581ba0912">
