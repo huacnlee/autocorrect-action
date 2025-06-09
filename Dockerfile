@@ -1,4 +1,4 @@
-FROM huacnlee/autocorrect:latest
+FROM huacnlee/autocorrect:2.14.0
 
 WORKDIR ${GITHUB_WORKSPACE}
 
